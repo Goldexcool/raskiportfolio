@@ -6,6 +6,7 @@ const svgToDataUri = require("mini-svg-data-uri");
 const colors = require("tailwindcss/colors");
 const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
 
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 const addVariablesForColors = ({ addBase, theme }: any) => {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
@@ -37,6 +38,8 @@ const config: Config = {
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite", // Added shimmer animation
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite", // Added scroll animation
       },
       keyframes: {
         spotlight: {
@@ -55,6 +58,11 @@ const config: Config = {
           },
           to: {
             backgroundPosition: "-200% 0",
+          },
+        },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
           },
         },
       },

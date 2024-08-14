@@ -27,7 +27,7 @@ const Hero = () => {
                         <ButtonsCard text='Hire Us!!!!' className='bg-[#2d0954]text-2xl' />
                     </div>
                 </div>
-                <img src={hero.src} alt='' className='order-2 lg:translate-x-10 overflow-hidden flex justify-center items-start lg:rotate-12 rounded-md ' />
+                <img src={hero.src} alt='' className='order-2 lg:translate-x-10 overflow-hidden flex justify-center items-start rounded-md ' />
             </div>
 
         </section>

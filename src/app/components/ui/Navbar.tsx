@@ -63,9 +63,11 @@ export const MenuItem = ({
 export const Menu = ({
   setActive,
   children,
+  onClick,
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
+  onClick?: () => void; 
 }) => {
   return (
     <nav
@@ -82,11 +84,13 @@ export const ProductItem = ({
   description,
   href,
   src,
+  onClick,
 }: {
   title: string;
   description: string;
   href: string;
   src: string;
+  onClick?: () => void
 }) => {
   return (
     <Link href={href} className="flex space-x-2">
